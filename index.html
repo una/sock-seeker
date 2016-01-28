@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sock Seeker</title>
+  <title>Sock Seeker!</title>
 </head>
 <body>
 
 <header>
-
+  <!-- SVG logo here -->
 </header>
 
 <main>
@@ -16,10 +16,26 @@
     <input class="search__input" type="search" placeholder="slack">
     <span class="search__text">socks</span>
   </section>
+
+  <section class="result__area">
+    <ul class="result__list">
+
+      <!-- template for each result: -->
+      <li class="result__block">
+        <figure>
+          <img class="result__image" src="{img here}" alt="{img name}">
+          <figcaption class="result__caption">
+            {img name}
+          </figcaption>
+        </figure>
+      </li>
+
+    </ul>
+  </section>
 </main>
 
 <footer>
-
+  <p>Made with love by <a href="http://twitter.com/una">Una</a> for the Slack team | <a href="http://github.com/una/sock-seeker">View Source</a></p>
 </footer>
 
 </body>
