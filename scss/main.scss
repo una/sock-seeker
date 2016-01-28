@@ -1,1 +1,17 @@
-@import 'base/base';
+// Variables and Mixins
+// No CSS is output here:
+@import 'utils/color';
+@import 'utils/typography';
+@import 'utils/grid';
+@import 'utils/motion';
+
+// Base build of site
+@import 'base/site';
+@import 'base/typography';
+@import 'base/layout';
+
+// Individual components
+@import 'components/search';
+@import 'components/images';
+@import 'components/header';
+@import 'components/footer';
