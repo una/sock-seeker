@@ -15,7 +15,6 @@ var gulp            = require('gulp'),
     pngquant        = require('imagemin-pngquant'),
     plumber         = require('gulp-plumber'),
     notify          = require('gulp-notify'),
-    ejs             = require("gulp-ejs"),
     webpack         = require('webpack'),
     webpackStream   = require('webpack-stream');
 
@@ -68,7 +67,6 @@ gulp.task('minify-html', function() {
     };
 
   gulp.src('./*.html')
-    .pipe(ejs())
     .pipe(minifyHTML(opts))
     .pipe(gulp.dest('dist/'))
     .pipe(reload({stream:true}));

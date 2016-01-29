@@ -1,5 +1,7 @@
-var request = new XMLHttpRequest();
-var resultBuilder = require('./resultBuilder');
+'strict mode';
+
+const request = new XMLHttpRequest();
+const resultBuilder = require('./resultBuilder');
 
 // var keys = require('./keybindings');
 // var clicks = require('./clickbindings');
@@ -9,11 +11,11 @@ request.open('GET', '/json-list', true);
 request.onload = function() {
   'use strict';
   if (request.status >= 200 && request.status < 400) {
-    var data = JSON.parse(request.responseText).items;
+    const data = JSON.parse(request.responseText).items;
 
-    var results = [];
+    let results = [];
 
-    for (var i = 0; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
       results.push({
         title: data[i].title,
         image: data[i].link,
