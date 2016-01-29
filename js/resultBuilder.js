@@ -1,3 +1,5 @@
+'strict mode';
+
 // using list from API call
 module.exports = function(results) {
 
@@ -5,8 +7,8 @@ module.exports = function(results) {
 
   results.forEach( function(result, i) {
     console.log(result);
-    var img = new Image();
-    var div = document.querySelector('main');
+    let img = new Image();
+    let div = document.querySelector('main');
 
     img.onload = function() {
       div.appendChild(img);

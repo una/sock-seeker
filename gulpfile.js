@@ -15,7 +15,6 @@ var gulp            = require('gulp'),
     pngquant        = require('imagemin-pngquant'),
     plumber         = require('gulp-plumber'),
     notify          = require('gulp-notify'),
-    ejs             = require("gulp-ejs"),
     webpack         = require('webpack'),
     webpackStream   = require('webpack-stream');
 
@@ -68,7 +67,6 @@ gulp.task('minify-html', function() {
     };
 
   gulp.src('./*.html')
-    .pipe(ejs())
     .pipe(minifyHTML(opts))
     .pipe(gulp.dest('dist/'))
     .pipe(reload({stream:true}));
@@ -102,12 +100,21 @@ gulp.task('imgmin', function () {
 function jsBuild(isProduction) {
   return gulp.src('js/main.js')
     .pipe(webpackStream({
+      module: {
+        loaders: [
+          { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"}
+        ]
+      },
+
+      // rename files
       entry : {
         j : './js/main.js'
       },
       output: {
         filename: '[name].js'
       },
+
+      // compress if in production
       plugins: isProduction ? [
         new webpack.optimize.UglifyJsPlugin({
           compress: {
