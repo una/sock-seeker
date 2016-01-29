@@ -4,7 +4,7 @@ var request = require('request');
 var fs = require('fs');
 var path = require('path');
 var env = process.env.NODE_ENV || "development";
-var key, search_id;
+var json, key, search_id;
 var query = 'slacksocks';
 
 // for Heroku, make sure the key is right
