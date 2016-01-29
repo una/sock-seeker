@@ -3,7 +3,9 @@ var app = express();
 var request = require('request');
 var fs = require('fs');
 var path = require('path');
-var env = process.env.NODE_ENV || "development"
+var env = process.env.NODE_ENV || "development";
+var key, search_id;
+var query = 'slacksocks';
 
 // for Heroku, make sure the key is right
 if (env === 'production') {
@@ -14,17 +16,17 @@ if (env === 'production') {
   search_id = fs.readFileSync('./search_id.txt', 'utf8');
 }
 
+// creating json list of results
+app.get('/json-list', function(req, res){
+  request.get('https://www.googleapis.com/customsearch/v1?key=' + key + '&cx=' + search_id + '&searchType=image&num=10&q=' + query,
+  function(err, response, body) {
+    json = JSON.parse(body);
+    res.json(json);
+  });
+});
+
 // Setting public folder views
 app.use(express.static(__dirname + '/dist', { extensions: ['html'] }));
-
-// Setting templating engine
-app.set('view engine', 'ejs');
-
-
-// 404s!
-app.use(function(req,res){
-  res.sendFile(path.resolve(__dirname, 'dist/404.html'));
-});
 
 // Server Start
 app.listen(process.env.PORT || 3000, function(){
