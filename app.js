@@ -1,16 +1,13 @@
-'strict mode';
+var express = require('express');
+var app = express();
+var request = require('request');
+var fs = require('fs');
+var path = require('path');
+var env = process.env.NODE_ENV || "development";
+var json, key, search_id;
+var query = 'slacksocks';
 
-const express = require('express');
-const app = express();
-const request = require('request');
-const fs = require('fs');
-const path = require('path');
-const env = process.env.NODE_ENV || "development";
-const json, key, search_id;
-const query = 'slacksocks';
-
-// for production vs dev environment
-// get the correct keys
+// for Heroku, make sure the key is right
 if (env === 'production') {
   key = process.env.key;
   search_id = process.env.search_id;
@@ -19,10 +16,9 @@ if (env === 'production') {
   search_id = fs.readFileSync('./search_id.txt', 'utf8');
 }
 
-// creating JSON list of results
-// from Google search query
+// creating json list of results
 app.get('/json-list', function(req, res){
-  request.get('https://www.googleapis.com/customsearch/v1?key=' + key + '&cx=' + search_id + '&searchType=image&num=10&q=' + query,
+  request.get('https://www.googleapis.com/customsearch/v1?key=' + key + '&cx=' + search_id + '&searchType=image&num=9&q=' + query,
   function(err, response, body) {
     json = JSON.parse(body);
     res.json(json);
@@ -32,7 +28,7 @@ app.get('/json-list', function(req, res){
 // Setting public folder views
 app.use(express.static(__dirname + '/dist', { extensions: ['html'] }));
 
-// Start server
+// Server Start
 app.listen(process.env.PORT || 3000, function(){
   console.log('✨🎆✨ Yasssss we running on port: %d in %s mode', this.address().port, app.settings.env);
 });

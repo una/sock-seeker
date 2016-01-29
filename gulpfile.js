@@ -100,12 +100,21 @@ gulp.task('imgmin', function () {
 function jsBuild(isProduction) {
   return gulp.src('js/main.js')
     .pipe(webpackStream({
+      module: {
+        loaders: [
+          { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"}
+        ]
+      },
+
+      // rename files
       entry : {
         j : './js/main.js'
       },
       output: {
         filename: '[name].js'
       },
+
+      // compress if in production
       plugins: isProduction ? [
         new webpack.optimize.UglifyJsPlugin({
           compress: {
