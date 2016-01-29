@@ -1,5 +1,5 @@
 var request = new XMLHttpRequest();
-// var results = require('./results');
+var resultBuilder = require('./resultBuilder');
 
 // var keys = require('./keybindings');
 // var clicks = require('./clickbindings');
@@ -24,7 +24,8 @@ request.onload = function() {
       });
     }
 
-    console.log(results);
+    // Passing results into resultBuilder to make the page
+    resultBuilder(results);
 
   } else {
     console.log('Something went wrong!');
