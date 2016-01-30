@@ -17,13 +17,13 @@ if (env === 'production') {
 }
 
 // creating json list of results
-app.get('/json-list', function(req, res){
-  request.get('https://www.googleapis.com/customsearch/v1?key=' + key + '&cx=' + search_id + '&searchType=image&num=9&q=' + query,
-  function(err, response, body) {
-    json = JSON.parse(body);
-    res.json(json);
-  });
-});
+// app.get('/json-list', function(req, res){
+//   request.get('https://www.googleapis.com/customsearch/v1?key=' + key + '&cx=' + search_id + '&searchType=image&num=9&q=' + query,
+//   function(err, response, body) {
+//     json = JSON.parse(body);
+//     res.json(json);
+//   });
+// });
 
 // Setting public folder views
 app.use(express.static(__dirname + '/dist', { extensions: ['html'] }));

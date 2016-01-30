@@ -1,0 +1,42 @@
+// Grid Mixin
+@mixin breakpoint($class) {
+  @if $class == xxs {
+    @media (max-width: 360px) { @content; }
+  }
+
+  @else if $class == xs {
+    @media (max-width: 500px) { @content; }
+  }
+
+  @else if $class == sm {
+    @media (max-width: 768px) { @content; }
+  }
+
+  @else if $class == sm-rev {
+    @media (min-width: 768px) { @content; }
+  }
+
+  @else if $class == sm-md {
+    @media (max-width: 850px) { @content; }
+  }
+
+  @else if $class == md {
+    @media (max-width: 992px) { @content; }
+  }
+
+  @else if $class == md-rev {
+    @media (min-width: 992px) { @content; }
+  }
+
+  @else if $class == lg {
+    @media (max-width: 1200px) { @content; }
+  }
+
+  @else if $class == xl {
+    @media (max-width: 1400px) { @content; }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xxs, xs, sm, sm-md, md, md-red, lg, xl";
+  }
+}

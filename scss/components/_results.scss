@@ -1,0 +1,47 @@
+.result {
+  &__list {
+    width: 100%;
+    max-width: 1000px;
+    margin: 2em auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__fig {
+    @include aspect-ratio(1,1);
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px dashed $color--lg-copy;
+  }
+
+  &__image {
+    height: 100%;
+    max-width: 130%;
+  }
+
+  &__block {
+    flex: auto;
+    width: 200px;
+    margin: .5em;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition-duration: $transition--base;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.05);
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    bottom: 0;
+    background: $color--copy;
+    color: white;
+    padding: 1em;
+    width: 100%;
+    font-weight: 200;
+  }
+}

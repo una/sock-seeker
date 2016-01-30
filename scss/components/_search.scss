@@ -20,7 +20,7 @@
     font-weight: 200;
     max-width: 5em;
     outline: none;
-    transition-duration: .25s;
+    transition-duration: $transition--base;
 
     &::placeholder {
       color: mix(white, $color--input, 50%);
@@ -29,6 +29,31 @@
     &:hover,
     &:focus {
       background: mix(white, $color--lg-copy, 50%);
+      border-bottom: 2px dashed $color--bg;
+
+      &::placeholder {
+        color: mix(white, $color--copy, 50%);
+      }
+    }
+  }
+
+  &__submit {
+    background: none;
+    border: 2px dashed $light-gray;
+    color: #555;
+    cursor: pointer;
+    font-size: 40%;
+    font-weight: 200;
+    margin-left: 1em;
+    outline: none;
+    padding: 0.6em;
+    transition-duration: $transition--base;
+    vertical-align: middle;
+
+    &:hover,
+    &:focus {
+      background: mix(white, $color--lg-copy, 50%);
+      border: 2px dashed $color--copy;
     }
   }
 }
