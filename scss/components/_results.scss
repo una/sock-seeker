@@ -24,6 +24,7 @@
   &__image {
     height: 100%;
     max-width: 130%;
+    margin: 0 auto;
 
     .lightboxed & {
       margin: 10vh auto;
@@ -33,7 +34,7 @@
 
   &__block {
     flex: auto;
-    flex-basis: 300px;
+    flex-basis: 220px;
     margin: .5em;
     justify-content: flex-start;
     align-items: flex-start;
@@ -64,7 +65,6 @@
 
   &__caption {
     position: absolute;
-    bottom: 0;
     background: $color--copy;
     color: white;
     padding: 1em;
@@ -73,6 +73,7 @@
 
     .lightboxed & {
       font-size: 2em;
+      bottom: 0;
     }
   }
 }
