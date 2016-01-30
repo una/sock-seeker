@@ -1,4 +1,4 @@
-'strict mode';
+'use strict';
 
 const request = new XMLHttpRequest();
 const resultBuilder = require('./resultBuilder');

@@ -1,4 +1,4 @@
-'strict mode';
+'use strict';
 
 // using list from API call
 module.exports = function(results) {
@@ -7,14 +7,19 @@ module.exports = function(results) {
 
   results.forEach( function(result, i) {
     console.log(result);
-    let img = new Image();
-    let div = document.querySelector('main');
+    const resultList = document.querySelector('.result__list');
 
-    img.onload = function() {
-      div.appendChild(img);
-    };
+    const domTemplate =
+    `<li class="result__block">
+      <figure>
+        <img class="result__image" src="${result.image}" alt="${result.title}">
+        <figcaption class="result__caption">
+          ${result.title}
+        </figcaption>
+      </figure>
+    </li>`;
 
-    img.src = result.image;
+    resultList.innerHTML += domTemplate;
 
   });
 
