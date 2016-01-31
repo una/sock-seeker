@@ -36,11 +36,11 @@ gulp.task('scss', function() {
     .pipe(prefix())
     .pipe(rename('main.css'))
     .pipe(gulp.dest('dist/css'))
-    .pipe(reload({stream:true}))
     .pipe(cssmin())
     .pipe(size({ gzip: true, showFiles: true }))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('dist/css'))
+    .pipe(reload({stream:true}));
 });
 
 gulp.task('browser-sync', function() {
