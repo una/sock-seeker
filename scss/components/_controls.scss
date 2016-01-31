@@ -1,4 +1,42 @@
+%control__btn {
+  background: none;
+  border: none;
+  position: absolute;
+  display: none;
+  pointer-events: none;
+
+  .lightbox-open & {
+    display: block;
+    pointer-events: initial;
+  }
+}
+
 .controls {
   z-index: 100;
   position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  &__btn {
+    &--close {
+      @extend %control__btn;
+      font-size: 3em;
+      top: .25em;
+      right: .25em;
+    }
+    &--prev {
+      @extend %control__btn;
+      font-size: 5em;
+      top: 40vh;
+      left: .25em;
+    }
+    &--next {
+      @extend %control__btn;
+      font-size: 5em;
+      top: 40vh;
+      right: .25em;
+    }
+  }
 }
