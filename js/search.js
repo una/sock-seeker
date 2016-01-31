@@ -1,7 +1,6 @@
 import CallResults from './callResults';
 
 const Search = () => {
-  console.log('Search');
 
   const submitBtn = document.querySelector('.search__submit');
   const searchBox = document.querySelector('.search__input');

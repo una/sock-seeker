@@ -7,6 +7,8 @@ const ResultBuilder = (results) => {
 
   results.forEach((result, i) => {
 
+    console.log(i);
+
     const domTemplate =
     `<li class="result__block">
       <figure class="result__fig">

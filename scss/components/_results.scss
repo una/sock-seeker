@@ -13,6 +13,7 @@
     cursor: pointer;
     overflow: hidden;
     border: 1px solid $light-gray;
+    pointer-events: none;
 
     .lightboxed & {
       border: none;
@@ -24,6 +25,7 @@
     height: 100%;
     max-width: 130%;
     margin: 0 auto;
+    pointer-events: none;
 
     .lightboxed & {
       margin: 10vh auto;
