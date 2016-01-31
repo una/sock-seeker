@@ -12,8 +12,6 @@
   "author": "Una Kravets",
   "dependencies": {
     "browser-sync": "^2.0.0-rc4",
-    "ejs": "^2.4.1",
-    "express": "^4.12.3",
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-concat": "^2.4.3",
@@ -33,7 +31,6 @@
     "gulp-uglify": "^1.0.2",
     "gulp-wrap": "^0.11.0",
     "imagemin-pngquant": "^4.0.0",
-    "instagram-node": "^0.5.8",
     "node-libs-browser": "^0.5.2",
     "request": "^2.57.0",
     "webpack": "^1.9.10",
