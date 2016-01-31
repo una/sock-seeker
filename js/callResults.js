@@ -1,6 +1,6 @@
 import ResultBuilder from './resultBuilder';
 import LightBox from './lightBox';
-import ImageSwitcher from './imageSwitcher';
+// import ImageSwitcher from './imageSwitcher';
 
 const callResults = (query) => {
   const request = new XMLHttpRequest();
@@ -9,8 +9,8 @@ const callResults = (query) => {
   // I know in production, these values should be hidden
   // and pulled in via the server reading the env
   // but I wanted to host a static site on GH pages :)
-  const key = 'AIzaSyC7bgXQ4XRndkzKXSQXwdQwiOIHmZvgfiQ';
-  const search_id = '011766833210041731964:07xp0hl30ly';
+  const key = 'AIzaSyCaZUBImP47vtg5mbBOHJI9LB66FQwzwF4';
+  const search_id = '003445731598848083469:wurvxzovwmu';
 
   request.onreadystatechange = function() {
 

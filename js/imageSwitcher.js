@@ -1,15 +1,14 @@
-const ImageSwitcher = (openImage) => {
+const ImageSwitcher = (currImage) => {
 
   const prevBtn = document.querySelector('.controls__btn--prev');
   const nextBtn = document.querySelector('.controls__btn--next');
-
-  console.log(openImage);
+  let openImage;
 
   nextBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    openImage = openImage.nextSibling;
-    console.log(openImage);
+    let openImage = currImage.nextSibling;
 
+    console.log(openImage);
   });
 
 
