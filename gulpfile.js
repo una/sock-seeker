@@ -51,14 +51,6 @@ gulp.task('browser-sync', function() {
   });
 });
 
-// gulp.task('nodemon', function () {
-//   return nodemon({
-//     script: 'app.js'
-//   }).on('start', function () {
-//       // cb();
-//   });
-// });
-
 gulp.task('minify-html', function() {
     var opts = {
       comments:true,
