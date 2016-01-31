@@ -5,8 +5,7 @@
     margin: 2em auto;
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
   }
 
   &__fig {
@@ -33,12 +32,8 @@
   }
 
   &__block {
-    flex: auto;
-    flex-basis: 220px;
+    width: 230px;
     margin: .5em;
-    justify-content: flex-start;
-    align-items: flex-start;
-    transition-duration: $transition--base;
 
     &:hover,
     &:focus {

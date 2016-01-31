@@ -1,9 +1,11 @@
 const ResultBuilder = (results) => {
 
-  console.log('going to build results here');
+  const resultList = document.querySelector('.result__list');
 
-  results.forEach( (result, i) => {
-    const resultList = document.querySelector('.result__list');
+  // Remove the waiting message or current results
+  resultList.innerHTML = '';
+
+  results.forEach((result, i) => {
 
     const domTemplate =
     `<li class="result__block">
@@ -15,6 +17,7 @@ const ResultBuilder = (results) => {
       </figure>
     </li>`;
 
+    // Fill the result list!
     resultList.innerHTML += domTemplate;
 
   });

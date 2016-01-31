@@ -5,8 +5,10 @@ const LightBox = () => {
   const resultBlock = [... (document.querySelectorAll('.result__block'))];
 
   const addLightbox = (results) => {
+
+    // iterating results to add event listeners for lightbox
     results.forEach(result => {
-      result.addEventListener('click', function() {
+      result.addEventListener('click', () => {
         removeLightbox(results);
         result.classList.add('lightboxed');
       });
