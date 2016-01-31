@@ -34,6 +34,7 @@
   &__block {
     width: 230px;
     margin: .5em;
+    transition-duration: $transition--base;
 
     &:hover,
     &:focus {
@@ -47,7 +48,7 @@
       top: 0;
       left: 0;
       z-index: 10;
-      background: rgba($color--lg-copy, .9);
+      background: rgba($color--lg-copy, .95);
       margin: 0;
 
       &:hover,
@@ -60,14 +61,15 @@
 
   &__caption {
     position: absolute;
+    text-align: center;
     background: $color--copy;
     color: white;
     padding: 1em;
     width: 100%;
+    font-size: 1.5em;
     font-weight: 200;
 
     .lightboxed & {
-      font-size: 2em;
       bottom: 0;
     }
   }

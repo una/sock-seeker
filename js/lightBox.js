@@ -3,27 +3,19 @@ const LightBox = () => {
 
   // all of the results from node list spread into array
   const resultBlock = [... (document.querySelectorAll('.result__block'))];
+  const body = document.querySelector('body');
 
-  const addLightbox = (results) => {
-
-    // iterating results to add event listeners for lightbox
-    results.forEach(result => {
-      result.addEventListener('click', () => {
-        removeLightbox(results);
-        result.classList.add('lightboxed');
-      });
-    });
-  };
-
-  const removeLightbox = (results) => {
-    results.forEach(result => {
+  resultBlock.forEach(result => {
+    result.addEventListener('click', () => {
       if (result.classList.contains('lightboxed')) {
         result.classList.remove('lightboxed');
-      }
+        body.classList.remove('lightbox-open');
+      } else {
+        result.classList.add('lightboxed');
+        body.classList.add('lightbox-open');
+      };
     });
-  }
-
-  addLightbox(resultBlock);
+  });
 };
 
 export default LightBox;
