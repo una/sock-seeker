@@ -1,11 +1,8 @@
-'use strict';
-
-// using list from API call
-module.exports = function(results) {
+const ResultBuilder = (results) => {
 
   console.log('going to build results here');
 
-  results.forEach( function(result, i) {
+  results.forEach( (result, i) => {
     console.log(result);
     const resultList = document.querySelector('.result__list');
 
@@ -22,5 +19,6 @@ module.exports = function(results) {
     resultList.innerHTML += domTemplate;
 
   });
-
 };
+
+export default ResultBuilder;

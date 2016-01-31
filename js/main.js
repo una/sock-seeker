@@ -1,10 +1,11 @@
 'use strict';
 
 const request = new XMLHttpRequest();
-const resultBuilder = require('./resultBuilder');
+import ResultBuilder from './resultBuilder';
+import LightBox from './lightBox';
 
-// var keys = require('./keybindings');
-// var clicks = require('./clickbindings');
+// const keys = require('./keybindings');
+// const clicks = require('./clickbindings');
 
 request.open('GET', '/json-list', true);
 
@@ -27,7 +28,7 @@ request.onload = function() {
     }
 
     // Passing results into resultBuilder to make the page
-    resultBuilder(results);
+    ResultBuilder(results);
 
   } else {
     console.log('Something went wrong!');
@@ -40,3 +41,5 @@ request.onerror = function() {
 };
 
 request.send();
+
+LightBox();
