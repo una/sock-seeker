@@ -1,0 +1,13 @@
+.footer {
+  &__copy {
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    background: mix(white, $light-gray, 75%);
+    font-weight: 200;
+  }
+
+  &__link {
+    color: $color--lg-copy;
+  }
+}

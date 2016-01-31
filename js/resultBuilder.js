@@ -11,7 +11,7 @@ module.exports = function(results) {
 
     const domTemplate =
     `<li class="result__block">
-      <figure>
+      <figure class="result__fig">
         <img class="result__image" src="${result.image}" alt="${result.title}">
         <figcaption class="result__caption">
           ${result.title}

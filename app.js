@@ -5,7 +5,7 @@ var fs = require('fs');
 var path = require('path');
 var env = process.env.NODE_ENV || "development";
 var json, key, search_id;
-var query = 'slacksocks';
+var query = 'cute+unicorn+socks';
 
 // for Heroku, make sure the key is right
 if (env === 'production') {
@@ -18,7 +18,7 @@ if (env === 'production') {
 
 // creating json list of results
 app.get('/json-list', function(req, res){
-  request.get('https://www.googleapis.com/customsearch/v1?key=' + key + '&cx=' + search_id + '&searchType=image&num=9&q=' + query,
+  request.get('https://www.googleapis.com/customsearch/v1?key=' + key + '&cx=' + search_id + '&searchType=image&q=' + query,
   function(err, response, body) {
     json = JSON.parse(body);
     res.json(json);
