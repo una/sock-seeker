@@ -43,22 +43,21 @@ gulp.task('scss', function() {
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('browser-sync', ['nodemon'], function() {
-  browserSync.init(null, {
-    proxy: "http://localhost:3000",
-    files: ["dist/**/*.*"],
-    browser: "google chrome",
-    port: 5000,
+gulp.task('browser-sync', function() {
+  browserSync({
+    server: {
+      baseDir: "dist/"
+    }
   });
 });
 
-gulp.task('nodemon', function () {
-  return nodemon({
-    script: 'app.js'
-  }).on('start', function () {
-      // cb();
-  });
-});
+// gulp.task('nodemon', function () {
+//   return nodemon({
+//     script: 'app.js'
+//   }).on('start', function () {
+//       // cb();
+//   });
+// });
 
 gulp.task('minify-html', function() {
     var opts = {

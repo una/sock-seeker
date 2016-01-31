@@ -3,7 +3,6 @@ const ResultBuilder = (results) => {
   console.log('going to build results here');
 
   results.forEach( (result, i) => {
-    console.log(result);
     const resultList = document.querySelector('.result__list');
 
     const domTemplate =
