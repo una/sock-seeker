@@ -1,4 +1,5 @@
 import ResultBuilder from './resultBuilder';
+import LightBox from './lightBox';
 
 const callResults = (query) => {
   const request = new XMLHttpRequest();
@@ -29,9 +30,8 @@ const callResults = (query) => {
 
       // Passing results into resultBuilder to build the page
       ResultBuilder(results);
+      LightBox();
 
-    } else {
-      console.log('Uh oh. Something went wrong with the request!');
     }
   };
 
