@@ -3,7 +3,6 @@
   border: none;
   position: absolute;
   display: none;
-  pointer-events: none;
 
   .lightbox-open & {
     display: block;
@@ -18,6 +17,7 @@
   height: 100%;
   top: 0;
   left: 0;
+  pointer-events: none;
 
   &__btn {
     &--close {

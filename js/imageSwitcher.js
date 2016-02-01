@@ -11,6 +11,13 @@ const ImageSwitcher = (currImage) => {
     console.log(openImage);
   });
 
+  prevBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    let openImage = currImage.previousSibling;
+
+    console.log(openImage);
+  });
+
 
 
 };
