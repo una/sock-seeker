@@ -1,8 +1,7 @@
 import ResultBuilder from './resultBuilder';
 import LightBox from './lightBox';
-// import ImageSwitcher from './imageSwitcher';
 
-const callResults = (query) => {
+const apiCall = (query) => {
   const request = new XMLHttpRequest();
   let results = [];
 
@@ -39,4 +38,4 @@ const callResults = (query) => {
   request.send();
 }
 
-export default callResults;
+export default apiCall;

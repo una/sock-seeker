@@ -1,6 +1,5 @@
-// import ImageSwitcher from './imageSwitcher';
-
 const LightBox = () => {
+  // current image being magnified in the lightbox
   let openImage;
 
   // page elements
@@ -16,7 +15,6 @@ const LightBox = () => {
   // before removing the class, if it doesn't have the class
   // yet, add one to create the lightbox view and set the openImage
   const lightBoxAdder = (e, openImage) => {
-
     if (openImage && openImage.classList.contains('lightboxed')) {
       openImage.classList.remove('lightboxed');
       body.classList.remove('lightbox-open');
@@ -55,7 +53,6 @@ const LightBox = () => {
   }
 
   const ImageSwitcher = (openImage) => {
-
     nextBtn.addEventListener('click', (e) => {
       e.preventDefault();
 
@@ -64,8 +61,6 @@ const LightBox = () => {
         openImage = openImage.nextSibling;
         openImage.classList.add('lightboxed');
       }
-
-      console.log(openImage);
     });
 
     prevBtn.addEventListener('click', (e) => {
@@ -76,8 +71,6 @@ const LightBox = () => {
         openImage = openImage.previousSibling;
         openImage.classList.add('lightboxed');
       }
-
-      console.log(openImage);
     });
   };
 
