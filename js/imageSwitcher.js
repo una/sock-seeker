@@ -1,25 +1,25 @@
-const ImageSwitcher = (currImage) => {
+// const ImageSwitcher = (currImage) => {
 
-  const prevBtn = document.querySelector('.controls__btn--prev');
-  const nextBtn = document.querySelector('.controls__btn--next');
-  let openImage;
+//   const prevBtn = document.querySelector('.controls__btn--prev');
+//   const nextBtn = document.querySelector('.controls__btn--next');
+//   let openImage;
 
-  nextBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    let openImage = currImage.nextSibling;
+//   nextBtn.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     let openImage = currImage.nextSibling;
 
-    console.log(openImage);
-  });
+//     console.log(openImage);
+//   });
 
-  prevBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    let openImage = currImage.previousSibling;
+//   prevBtn.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     let openImage = currImage.previousSibling;
 
-    console.log(openImage);
-  });
+//     console.log(openImage);
+//   });
 
 
 
-};
+// };
 
-export default ImageSwitcher;
+// export default ImageSwitcher;

@@ -1,11 +1,16 @@
-import ImageSwitcher from './imageSwitcher';
+// import ImageSwitcher from './imageSwitcher';
 
 const LightBox = () => {
   let openImage;
-  // all of the results from node list spread into array
-  const resultBlock = [... (document.querySelectorAll('.result__block'))];
+
+  // page elements
   const closeBtn = document.querySelector('.controls__btn--close');
+  const prevBtn = document.querySelector('.controls__btn--prev');
+  const nextBtn = document.querySelector('.controls__btn--next');
   const body = document.querySelector('body');
+
+  // search results in spread out array
+  const resultBlock = [... (document.querySelectorAll('.result__block'))];
 
   // check if there is an openImage and if it has class lightboxed
   // before removing the class, if it doesn't have the class
@@ -26,6 +31,11 @@ const LightBox = () => {
     };
   };
 
+  const removeLightBox = () => {
+    result.classList.remove('lightboxed');
+    body.classList.remove('lightbox-open');
+  }
+
   const imageBlockClicker = () => resultBlock.forEach(result => {
     result.addEventListener('click', (e) => {
       lightBoxAdder(e, openImage);
@@ -36,7 +46,7 @@ const LightBox = () => {
     closeBtn.addEventListener('click', (e) => {
       e.preventDefault();
 
-      // remove all lightboxes
+      // remove all lightbox view
       resultBlock.forEach(result => {
         result.classList.remove('lightboxed');
         body.classList.remove('lightbox-open');
@@ -44,16 +54,35 @@ const LightBox = () => {
     });
   }
 
+  const ImageSwitcher = (openImage) => {
+
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (openImage.nextSibling) {
+        openImage.classList.remove('lightboxed');
+        openImage = openImage.nextSibling;
+        openImage.classList.add('lightboxed');
+      }
+
+      console.log(openImage);
+    });
+
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (openImage.previousSibling) {
+        openImage.classList.remove('lightboxed');
+        openImage = openImage.previousSibling;
+        openImage.classList.add('lightboxed');
+      }
+
+      console.log(openImage);
+    });
+  };
+
   imageBlockClicker();
   closeBtnFunction();
 };
-
-// NOTE: WHAT I SHOULD BE DOING IS CHECKING
-// IF THE IMAGE CLICKED IS OPEN IMAGE
-// THEN DO THE LIGHTBOX THING
-// ADD THE CLASS TO OPEN IMAGE
-// SO THAT THE PREV AND NEXT CAN DO THE SAME THING
-// JUST RESETING OPEN IMAGE
-// (so clicking wont add the class, just set the open Image)
 
 export default LightBox;
