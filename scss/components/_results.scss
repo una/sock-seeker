@@ -13,6 +13,7 @@
     cursor: pointer;
     overflow: hidden;
     border: 1px solid $light-gray;
+    pointer-events: none;
 
     .lightboxed & {
       border: none;
@@ -24,6 +25,7 @@
     height: 100%;
     max-width: 130%;
     margin: 0 auto;
+    pointer-events: none;
 
     .lightboxed & {
       margin: 10vh auto;
@@ -34,7 +36,6 @@
   &__block {
     width: 230px;
     margin: .5em;
-    transition-duration: $transition--base;
 
     &:hover,
     &:focus {
@@ -48,7 +49,7 @@
       top: 0;
       left: 0;
       z-index: 10;
-      background: rgba($color--lg-copy, .95);
+      background: $color--lg-copy;
       margin: 0;
 
       &:hover,

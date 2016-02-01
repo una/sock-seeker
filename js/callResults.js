@@ -1,5 +1,6 @@
 import ResultBuilder from './resultBuilder';
 import LightBox from './lightBox';
+// import ImageSwitcher from './imageSwitcher';
 
 const callResults = (query) => {
   const request = new XMLHttpRequest();
@@ -31,7 +32,6 @@ const callResults = (query) => {
       // Passing results into resultBuilder to build the page
       ResultBuilder(results);
       LightBox();
-
     }
   };
 
