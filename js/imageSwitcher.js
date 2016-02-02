@@ -1,25 +1,26 @@
-// const ImageSwitcher = (currImage) => {
+const ImageSwitcher = (openImage) => {
+  const prevBtn = document.querySelector('.controls__btn--prev');
+  const nextBtn = document.querySelector('.controls__btn--next');
 
-//   const prevBtn = document.querySelector('.controls__btn--prev');
-//   const nextBtn = document.querySelector('.controls__btn--next');
-//   let openImage;
+  nextBtn.addEventListener('click', (e) => {
+    e.preventDefault();
 
-//   nextBtn.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     let openImage = currImage.nextSibling;
+    if (openImage.nextSibling) {
+      openImage.classList.remove('lightboxed');
+      openImage = openImage.nextSibling;
+      openImage.classList.add('lightboxed');
+    }
+  });
 
-//     console.log(openImage);
-//   });
+  prevBtn.addEventListener('click', (e) => {
+    e.preventDefault();
 
-//   prevBtn.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     let openImage = currImage.previousSibling;
+    if (openImage.previousSibling) {
+      openImage.classList.remove('lightboxed');
+      openImage = openImage.previousSibling;
+      openImage.classList.add('lightboxed');
+    }
+  });
+};
 
-//     console.log(openImage);
-//   });
-
-
-
-// };
-
-// export default ImageSwitcher;
+export default ImageSwitcher;

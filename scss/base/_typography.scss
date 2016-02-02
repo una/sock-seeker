@@ -2,3 +2,13 @@ body {
   @extend %font--base;
   color: $color--copy;
 }
+
+.main__text--helper {
+  text-align: center;
+  width: 100%;
+  display: block;
+  margin: 1em auto;
+  font-weight: 200;
+  font-style: italic;
+  color: $dark-gray;
+}

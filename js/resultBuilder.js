@@ -1,13 +1,10 @@
 const ResultBuilder = (results) => {
-
   const resultList = document.querySelector('.result__list');
 
   // Remove the waiting message or current results
   resultList.innerHTML = '';
 
   results.forEach((result, i) => {
-
-    console.log(i);
 
     const domTemplate =
     `<li class="result__block">
@@ -21,7 +18,6 @@ const ResultBuilder = (results) => {
 
     // Fill the result list!
     resultList.innerHTML += domTemplate;
-
   });
 };
 

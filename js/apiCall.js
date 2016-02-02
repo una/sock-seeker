@@ -1,8 +1,7 @@
 import ResultBuilder from './resultBuilder';
 import LightBox from './lightBox';
-// import ImageSwitcher from './imageSwitcher';
 
-const callResults = (query) => {
+const apiCall = (query) => {
   const request = new XMLHttpRequest();
   let results = [];
 
@@ -12,6 +11,7 @@ const callResults = (query) => {
   const key = 'AIzaSyCaZUBImP47vtg5mbBOHJI9LB66FQwzwF4';
   const search_id = '003445731598848083469:wurvxzovwmu';
 
+  // API request on ready state change for search and pulling in data
   request.onreadystatechange = function() {
 
     if (request.status >= 200 && request.readyState == 4) {
@@ -22,9 +22,6 @@ const callResults = (query) => {
         results.push({
           title: data[i].title,
           image: data[i].link,
-          thumb: data[i].image.thumbnailLink,
-          imageHeight: data[i].image.height,
-          imageWidth: data[i].image.width,
           link: data[i].image.contextLink
         });
       }
@@ -39,4 +36,4 @@ const callResults = (query) => {
   request.send();
 }
 
-export default callResults;
+export default apiCall;
