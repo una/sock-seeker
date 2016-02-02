@@ -1,8 +1,19 @@
+// shared state placeholder
 %control__btn {
   background: none;
   border: none;
+  outline: none;
   position: absolute;
   display: none;
+  color: mix($teal, $color--copy, 30%);
+  cursor: pointer;
+  transition-duration: .5s;
+  transform-origin: 50%;
+
+  &:hover,
+  &:focus {
+    color: $color--copy;
+  }
 
   .lightbox-open & {
     display: block;
@@ -10,6 +21,7 @@
   }
 }
 
+// controls section output style
 .controls {
   height: 100%;
   left: 0;
@@ -32,6 +44,10 @@
       font-size: 5em;
       left: .25em;
       top: 40vh;
+
+      &:hover {
+        animation: waddle .5s ease-in-out alternate infinite;
+      }
     }
 
     &--next {
@@ -39,6 +55,20 @@
       font-size: 5em;
       right: .25em;
       top: 40vh;
+
+      &:hover {
+        animation: waddle .5s ease-in-out alternate infinite;
+      }
     }
+  }
+}
+
+// animations
+@keyframes waddle {
+  from {
+    transform: rotate(-5deg);
+  }
+  to {
+    transform: rotate(5deg);
   }
 }
