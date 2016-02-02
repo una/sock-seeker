@@ -1,18 +1,18 @@
 .result {
   &__list {
-    width: 100%;
-    max-width: 1000px;
-    margin: 2em auto;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    margin: 2em auto;
+    max-width: 1000px;
+    width: 100%;
   }
 
   &__fig {
     @include aspect-ratio(1,1);
+    border: 1px solid $light-gray;
     cursor: pointer;
     overflow: hidden;
-    border: 1px solid $light-gray;
     pointer-events: none;
 
     .lightboxed & {
@@ -23,8 +23,8 @@
 
   &__image {
     height: 100%;
-    max-width: 130%;
     margin: 0 auto;
+    max-width: 130%;
     pointer-events: none;
 
     .lightboxed & {
@@ -43,14 +43,14 @@
     }
 
     &.lightboxed {
-      width: 100%;
+      background: $color--lg-copy;
       height: 100%;
+      left: 0;
+      margin: 0;
       position: absolute;
       top: 0;
-      left: 0;
+      width: 100%;
       z-index: 10;
-      background: $color--lg-copy;
-      margin: 0;
 
       &:hover,
       &:focus {
@@ -61,14 +61,14 @@
   }
 
   &__caption {
-    position: absolute;
-    text-align: center;
     background: $color--copy;
     color: white;
-    padding: 1em;
-    width: 100%;
     font-size: 1.5em;
     font-weight: 200;
+    padding: 1em;
+    position: absolute;
+    text-align: center;
+    width: 100%;
 
     .lightboxed & {
       bottom: 0;
@@ -77,7 +77,7 @@
 }
 
 .preload--msg {
-  text-align: center;
   font-size: 1.5em;
   margin: 2em auto 70vh;
+  text-align: center;
 }

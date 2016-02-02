@@ -1,10 +1,10 @@
 .footer {
   &__copy {
-    padding: 1em;
-    width: 100%;
-    text-align: center;
     background: mix(white, $light-gray, 75%);
     font-weight: 200;
+    padding: 1em;
+    text-align: center;
+    width: 100%;
   }
 
   &__link {
