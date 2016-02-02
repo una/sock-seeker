@@ -3,6 +3,7 @@
 var gulp            = require('gulp'),
     nodemon         = require('gulp-nodemon'),
     sass            = require('gulp-sass'),
+    deploy          = require('gulp-gh-pages'),
     rename          = require('gulp-rename'),
     cssmin          = require('gulp-minify-css'),
     jshint          = require('gulp-jshint'),
@@ -118,6 +119,13 @@ function jsBuild(isProduction) {
     .pipe(gulp.dest('dist/js'))
     .pipe(reload({ stream : true }));
 }
+
+// deploy to GH pages
+gulp.task('deploy', function () {
+  return gulp.src('dist/**/*')
+    .pipe(deploy());
+});
+
 
 // webpack build
 gulp.task('webpack', function() {
