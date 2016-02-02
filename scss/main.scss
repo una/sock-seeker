@@ -10,13 +10,11 @@
 // Base build of site
 @import 'base/site';
 @import 'base/typography';
-@import 'base/layout';
 
 // Individual components
 @import 'components/search';
 @import 'components/results';
 @import 'components/controls';
-@import 'components/images';
 @import 'components/header';
 @import 'components/footer';
 @import 'components/clothesline';
