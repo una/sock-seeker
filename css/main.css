@@ -228,8 +228,17 @@ body {
 .controls__btn--close, .controls__btn--prev, .controls__btn--next {
   background: none;
   border: none;
+  outline: none;
   position: absolute;
-  display: none; }
+  display: none;
+  color: #5d787e;
+  cursor: pointer;
+  -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%; }
+  .controls__btn--close:hover, .controls__btn--prev:hover, .controls__btn--next:hover, .controls__btn--close:focus, .controls__btn--prev:focus, .controls__btn--next:focus {
+    color: #555; }
   .lightbox-open .controls__btn--close, .lightbox-open .controls__btn--prev, .lightbox-open .controls__btn--next {
     display: block;
     pointer-events: initial; }
@@ -250,10 +259,32 @@ body {
     font-size: 5em;
     left: .25em;
     top: 40vh; }
+    .controls__btn--prev:hover {
+      -webkit-animation: waddle .5s ease-in-out alternate infinite;
+              animation: waddle .5s ease-in-out alternate infinite; }
   .controls__btn--next {
     font-size: 5em;
     right: .25em;
     top: 40vh; }
+    .controls__btn--next:hover {
+      -webkit-animation: waddle .5s ease-in-out alternate infinite;
+              animation: waddle .5s ease-in-out alternate infinite; }
+
+@-webkit-keyframes waddle {
+  from {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg); }
+  to {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg); } }
+
+@keyframes waddle {
+  from {
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg); }
+  to {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg); } }
 
 .header__svg {
   margin: -5% 0 2em -7%;
