@@ -1,1 +1,285 @@
-!function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={exports:{},id:r,loaded:!1};return e[r].call(o.exports,o,o.exports,t),o.loaded=!0,o.exports}var n={};return t.m=e,t.c=n,t.p="",t(0)}([function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}var o=n(1),i=r(o),u=n(5),c=r(u);(0,i["default"])("cute+unicorn"),(0,c["default"])()},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(2),i=r(o),u=n(3),c=r(u),l=function(e){var t=new XMLHttpRequest,n=[],r="AIzaSyCaZUBImP47vtg5mbBOHJI9LB66FQwzwF4",o="003445731598848083469:wurvxzovwmu";t.onreadystatechange=function(){if(t.status>=200&&4==t.readyState){for(var e=JSON.parse(t.responseText).items,r=0;r<e.length;r++)n.push({title:e[r].title,image:e[r].link,link:e[r].image.contextLink});(0,i["default"])(n),(0,c["default"])()}},t.open("GET","https://www.googleapis.com/customsearch/v1?key="+r+"&cx="+o+"&searchType=image&q="+e+"+socks",!0),t.send()};t["default"]=l},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(e){var t=document.querySelector(".result__list");t.innerHTML="",e.forEach(function(e,n){var r='<li class="result__block">\n      <figure class="result__fig">\n        <img class="result__image" src="'+e.image+'" alt="'+e.title+'">\n        <figcaption class="result__caption">\n          '+e.title+"\n        </figcaption>\n      </figure>\n    </li>";t.innerHTML+=r})};t["default"]=n},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}function o(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}Object.defineProperty(t,"__esModule",{value:!0});var i=n(4),u=r(i),c=function(){var e=void 0,t=document.querySelector(".controls__btn--close"),n=document.querySelector("body"),r=[].concat(o(document.querySelectorAll(".result__block"))),i=function(e,t){t&&t.classList.contains("lightboxed")?(t.classList.remove("lightboxed"),n.classList.remove("lightbox-open")):(t=e.target,t.classList.add("lightboxed"),n.classList.add("lightbox-open"),(0,u["default"])(t))},c=function(){return r.forEach(function(t){t.addEventListener("click",function(t){i(t,e)})})},l=function(){t.addEventListener("click",function(e){e.preventDefault(),r.forEach(function(e){e.classList.remove("lightboxed"),n.classList.remove("lightbox-open")})})};c(),l()};t["default"]=c},function(e,t){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=function(e){var t=document.querySelector(".controls__btn--prev"),n=document.querySelector(".controls__btn--next");n.addEventListener("click",function(t){t.preventDefault(),e.nextSibling&&(e.classList.remove("lightboxed"),e=e.nextSibling,e.classList.add("lightboxed"))}),t.addEventListener("click",function(t){t.preventDefault(),e.previousSibling&&(e.classList.remove("lightboxed"),e=e.previousSibling,e.classList.add("lightboxed"))})};t["default"]=n},function(e,t,n){"use strict";function r(e){return e&&e.__esModule?e:{"default":e}}Object.defineProperty(t,"__esModule",{value:!0});var o=n(1),i=r(o),u=function(){var e=document.querySelector(".search__submit"),t=document.querySelector(".search__input");e.addEventListener("click",function(e){e.preventDefault();var n=t.value||"cute+unicorn";(0,i["default"])(n)})};t["default"]=u}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _apiCall = __webpack_require__(1);
+
+	var _apiCall2 = _interopRequireDefault(_apiCall);
+
+	var _search = __webpack_require__(5);
+
+	var _search2 = _interopRequireDefault(_search);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// initial request query is for unicorn socks
+	(0, _apiCall2.default)('cute+unicorn');
+	(0, _search2.default)();
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _resultBuilder = __webpack_require__(2);
+
+	var _resultBuilder2 = _interopRequireDefault(_resultBuilder);
+
+	var _lightBox = __webpack_require__(3);
+
+	var _lightBox2 = _interopRequireDefault(_lightBox);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var apiCall = function apiCall(query) {
+	  var request = new XMLHttpRequest();
+	  var results = [];
+
+	  // I know in production, these values should be hidden
+	  // and pulled in via the server reading the env
+	  // but I wanted to host a static site on GH pages :)
+	  var key = 'AIzaSyCaZUBImP47vtg5mbBOHJI9LB66FQwzwF4';
+	  var search_id = '003445731598848083469:wurvxzovwmu';
+
+	  // API request on ready state change for search and pulling in data
+	  request.onreadystatechange = function () {
+
+	    if (request.status >= 200 && request.readyState == 4) {
+	      var data = JSON.parse(request.responseText).items;
+
+	      // array with result objects (these define the keys)
+	      for (var i = 0; i < data.length; i++) {
+	        results.push({
+	          title: data[i].title,
+	          image: data[i].link,
+	          link: data[i].image.contextLink
+	        });
+	      }
+
+	      // Passing results into resultBuilder to build the page
+	      (0, _resultBuilder2.default)(results);
+	      (0, _lightBox2.default)();
+	    }
+	  };
+
+	  request.open('GET', 'https://www.googleapis.com/customsearch/v1?key=' + key + '&cx=' + search_id + '&searchType=image&q=' + query + '+socks', true);
+	  request.send();
+	};
+
+	exports.default = apiCall;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var ResultBuilder = function ResultBuilder(results) {
+	  var resultList = document.querySelector('.result__list');
+
+	  // Remove the waiting message or current results
+	  resultList.innerHTML = '';
+
+	  results.forEach(function (result, i) {
+
+	    var domTemplate = '<li class="result__block">\n      <figure class="result__fig">\n        <img class="result__image" src="' + result.image + '" alt="' + result.title + '">\n        <figcaption class="result__caption">\n          ' + result.title + '\n        </figcaption>\n      </figure>\n    </li>';
+
+	    // Fill the result list!
+	    resultList.innerHTML += domTemplate;
+	  });
+	};
+
+	exports.default = ResultBuilder;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _imageSwitcher = __webpack_require__(4);
+
+	var _imageSwitcher2 = _interopRequireDefault(_imageSwitcher);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	var LightBox = function LightBox() {
+	  // current image being magnified in the lightbox
+	  var openImage = undefined;
+
+	  // DOM element reference
+	  var closeBtn = document.querySelector('.controls__btn--close');
+	  var body = document.querySelector('body');
+
+	  // search results in spread out array for results
+	  var resultBlock = [].concat(_toConsumableArray(document.querySelectorAll('.result__block')));
+
+	  // check if there is an open image and apply appropriate classes
+	  // as well as track the currently open image
+	  var lightBoxAdder = function lightBoxAdder(e, openImage) {
+	    if (openImage && openImage.classList.contains('lightboxed')) {
+	      openImage.classList.remove('lightboxed');
+	      body.classList.remove('lightbox-open');
+	    } else {
+	      // save current open image result block
+	      openImage = e.target;
+
+	      openImage.classList.add('lightboxed');
+	      body.classList.add('lightbox-open');
+	      (0, _imageSwitcher2.default)(openImage);
+	    };
+	  };
+
+	  // add event listeners to results
+	  var initiateImageClicker = function initiateImageClicker() {
+	    return resultBlock.forEach(function (result) {
+	      result.addEventListener('click', function (e) {
+	        lightBoxAdder(e, openImage);
+	      });
+	    });
+	  };
+
+	  // allow the close button to remove lightbox
+	  var initiateCloseBtn = function initiateCloseBtn() {
+	    closeBtn.addEventListener('click', function (e) {
+	      e.preventDefault();
+
+	      // remove all lightbox views
+	      resultBlock.forEach(function (result) {
+	        result.classList.remove('lightboxed');
+	        body.classList.remove('lightbox-open');
+	      });
+	    });
+	  };
+
+	  initiateImageClicker();
+	  initiateCloseBtn();
+	};
+
+	exports.default = LightBox;
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var ImageSwitcher = function ImageSwitcher(openImage) {
+	  var prevBtn = document.querySelector('.controls__btn--prev');
+	  var nextBtn = document.querySelector('.controls__btn--next');
+
+	  nextBtn.addEventListener('click', function (e) {
+	    e.preventDefault();
+
+	    if (openImage.nextSibling) {
+	      openImage.classList.remove('lightboxed');
+	      openImage = openImage.nextSibling;
+	      openImage.classList.add('lightboxed');
+	    }
+	  });
+
+	  prevBtn.addEventListener('click', function (e) {
+	    e.preventDefault();
+
+	    if (openImage.previousSibling) {
+	      openImage.classList.remove('lightboxed');
+	      openImage = openImage.previousSibling;
+	      openImage.classList.add('lightboxed');
+	    }
+	  });
+	};
+
+	exports.default = ImageSwitcher;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _apiCall = __webpack_require__(1);
+
+	var _apiCall2 = _interopRequireDefault(_apiCall);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Search = function Search() {
+	  var submitBtn = document.querySelector('.search__submit');
+	  var searchBox = document.querySelector('.search__input');
+
+	  submitBtn.addEventListener('click', function (e) {
+	    e.preventDefault();
+	    var newQuery = searchBox.value || 'cute+unicorn';
+	    (0, _apiCall2.default)(newQuery);
+	  });
+	};
+
+	exports.default = Search;
+
+/***/ }
+/******/ ]);
